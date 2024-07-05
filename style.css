@@ -1,0 +1,53 @@
+body {
+    background-color: #C1C1C1;
+}
+
+.container {
+    max-width: 600px;
+    background-color: white;
+    padding: 30px;
+    margin: 60px auto;
+    box-shadow: rgba(100, 100, 111, 0.2) opx 7px 29px 0px;
+    border-radius: 10px;
+}
+
+.city {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+.time {
+    font-size: 48px;
+    font-weight: bold;
+
+}
+
+.date {
+    opacity: 0.7;
+}
+
+select {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+footer {
+    text-align: center;
+    font-size: 18px;
+    
+}
