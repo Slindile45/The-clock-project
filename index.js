@@ -10,15 +10,35 @@ function updateTime() {
   );
 
   let newYorkElement = document.querySelector("#New-York");
-  let newYorkDateElement = durbanElement.querySelector(".date");
-  let newYorkTimeElement = durbanElement.querySelector(".time");
+  let newYorkDateElement = newYorkElement.querySelector(".date");
+  let newYorkTimeElement = newYorkElement.querySelector(".time");
   let newYorkTime = moment().tx("America/New_York");
 
-  newYorkDateElementDateElement.innerHTML = newYorkTimeTime.format("MMMM Do YYYY");
-  newYorkTimeElementTimeElement.innerHTML = newYorkTimeTime.format(
+  newYorkDateElementDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
+  newYorkTimeElementTimeElement.innerHTML = newYorkTime.format(
     "HH:mm:ss [<small>]A[</small>]"
   );
 }
 
+function updateCity(event) {
+   let cityTimeZone = event.target.value;
+   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+   let cityTime = moment().tz(cityTimeZone);
+   let citiesElement = document.querySelector("#cities");
+   citiesElement.innerHTML = `<div class="city" id="Durban">
+            <div>
+            <h2>${cityTimeZone}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+            </div>
+            <div class="time">
+                ${cityTime.format("HH:mm:ss")} <small>${cityTime.format("A")}</small>
+            </div>
+        </div>`;
+}
+
 updateTime();
 setInterval(updateTime, 1000);
+
+let citiesSelectElemrnt = document.querySelector("#city");
+
+citiesSelectElemrnt.addEventListener("change", updateCity);
