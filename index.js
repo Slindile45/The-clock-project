@@ -1,23 +1,28 @@
 function updateTime() {
   let durbanElement = document.querySelector("#Durban");
-  let durbanDateElement = durbanElement.querySelector(".date");
-  let durbanTimeElement = durbanElement.querySelector(".time");
-  let durbanTime = moment().tx("Africa/Johannesburg");
+  if (durbanElement) {
+    let durbanDateElement = durbanElement.querySelector(".date");
+    let durbanTimeElement = durbanElement.querySelector(".time");
+    let durbanTime = moment().tx("Africa/Johannesburg");
 
-  durbanDateElement.innerHTML = durbanTime.format("MMMM Do YYYY");
-  durbanTimeElement.innerHTML = durbanTime.format(
-    "HH:mm:ss [<small>]A[</small>]"
-  );
+    durbanDateElement.innerHTML = durbanTime.format("MMMM Do YYYY");
+    durbanTimeElement.innerHTML = durbanTime.format(
+      "HH:mm:ss [<small>]A[</small>]"
+    );
+  }
 
-  let newYorkElement = document.querySelector("#New-York");
-  let newYorkDateElement = newYorkElement.querySelector(".date");
-  let newYorkTimeElement = newYorkElement.querySelector(".time");
-  let newYorkTime = moment().tx("America/New_York");
+    let newYorkElement = document.querySelector("#New-York");
+    if (newYorkElement) {
+    let newYorkDateElement = newYorkElement.querySelector(".date");
+    let newYorkTimeElement = newYorkElement.querySelector(".time");
+    let newYorkTime = moment().tx("America/New_York");
 
-  newYorkDateElementDateElement.innerHTML = newYorkTime.format("MMMM Do YYYY");
-  newYorkTimeElementTimeElement.innerHTML = newYorkTime.format(
-    "HH:mm:ss [<small>]A[</small>]"
-  );
+    newYorkDateElementDateElement.innerHTML =
+      newYorkTime.format("MMMM Do YYYY");
+    newYorkTimeElementTimeElement.innerHTML = newYorkTime.format(
+      "HH:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -42,6 +47,6 @@ function updateCity(event) {
 updateTime();
 setInterval(updateTime, 1000);
 
-let citiesSelectElemrnt = document.querySelector("#city");
+let citiesSelectElement = document.querySelector("#city");
 
-citiesSelectElemrnt.addEventListener("change", updateCity);
+citiesSelectElement.addEventListener("change", updateCity);
