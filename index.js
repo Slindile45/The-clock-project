@@ -3,7 +3,7 @@ function updateTime() {
   if (durbanElement) {
     let durbanDateElement = durbanElement.querySelector(".date");
     let durbanTimeElement = durbanElement.querySelector(".time");
-    let durbanTime = moment().tx("Africa/Johannesburg");
+    let durbanTime = moment().tz("Africa/Johannesburg");
 
     durbanDateElement.innerHTML = durbanTime.format("MMMM Do YYYY");
     durbanTimeElement.innerHTML = durbanTime.format(
@@ -15,7 +15,7 @@ function updateTime() {
     if (newYorkElement) {
     let newYorkDateElement = newYorkElement.querySelector(".date");
     let newYorkTimeElement = newYorkElement.querySelector(".time");
-    let newYorkTime = moment().tx("America/New_York");
+    let newYorkTime = moment().tz("America/New_York");
 
     newYorkDateElementDateElement.innerHTML =
       newYorkTime.format("MMMM Do YYYY");
